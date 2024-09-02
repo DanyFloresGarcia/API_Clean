@@ -1,0 +1,17 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/Prestamos",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5134
+          }
+        ],
+        "UpstreamPathTemplate": "/Prestamos",
+        "UpstreamHttpMethod": [ "POST" ]
+      }
+    ]
+  }
+  
