@@ -1,6 +1,6 @@
 using Application.Data;
 using Domain.Primitives;
-using Domain.Prestamo;
+using Domain.Auditorias;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +15,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
         _publiser = publiser ?? throw new ArgumentNullException(nameof(publiser));
     }
 
-    public DbSet<Prestamo2> Prestamos { get; set;}
+    public DbSet<Auditoria> Auditorias { get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

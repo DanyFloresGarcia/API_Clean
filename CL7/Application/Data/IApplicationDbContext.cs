@@ -1,11 +1,11 @@
-using Domain.Prestamo;
+using Domain.Auditorias;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Data;
 
 public interface IApplicationDbContext
 {
-    DbSet<Prestamo2> Prestamos { get; set; }
+    DbSet<Auditoria> Auditorias { get; set; }
     
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

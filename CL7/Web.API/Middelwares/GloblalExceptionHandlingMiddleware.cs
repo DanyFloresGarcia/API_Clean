@@ -1,6 +1,8 @@
 using System.Net;
 using System.Text.Json;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Web.API.Middlewares;
 
@@ -18,7 +20,7 @@ public class GloblalExceptionHandlingMiddleware : IMiddleware
         }
         catch (Exception e)
         {
-            _logger.LogError(e, e.Message);
+            _logger.LogError(e, e.InnerException == null ? e.Message : e.InnerException.Message);
 
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
@@ -27,7 +29,7 @@ public class GloblalExceptionHandlingMiddleware : IMiddleware
                 Status = (int)HttpStatusCode.InternalServerError,
                 Type = "Server Error",
                 Title = "Server Error",
-                Detail = "An internal server has ocurred."
+                Detail = "An internal server has ocurred."               
             };
 
             string json = JsonSerializer.Serialize(problem);

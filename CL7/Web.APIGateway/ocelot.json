@@ -1,7 +1,7 @@
 {
     "Routes": [
       {
-        "DownstreamPathTemplate": "/Prestamos",
+        "DownstreamPathTemplate": "/Auditoria",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
@@ -9,7 +9,7 @@
             "Port": 5134
           }
         ],
-        "UpstreamPathTemplate": "/Prestamos",
+        "UpstreamPathTemplate": "/Auditoria",
         "UpstreamHttpMethod": [ "POST" ]
       }
     ]
