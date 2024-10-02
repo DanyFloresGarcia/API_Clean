@@ -1,4 +1,5 @@
 using Application.Data;
+using Domain.ApiKeys;
 using Domain.Auditorias;
 using Domain.Primitives;
 using Infrastructure.Persistence;
@@ -34,6 +35,7 @@ public static class DependencyInjection{
                 sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<IAuditoriaRepository, AuditoriaRepository>();
+        services.AddScoped<IApiKeyRepository, ApiKeyRepository>();
 
         return services;
     }

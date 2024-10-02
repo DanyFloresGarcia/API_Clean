@@ -1,6 +1,7 @@
 using Application.Data;
 using Domain.Primitives;
 using Domain.Auditorias;
+using Domain.ApiKeys;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     }
 
     public DbSet<Auditoria> Auditorias { get; set;}
+    public DbSet<ApiKey> ApiKey { get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

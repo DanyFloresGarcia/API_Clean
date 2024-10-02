@@ -19,6 +19,7 @@ internal sealed class ObtenerAuditoriasQueryHandler : IRequestHandler<ObtenerAud
         _mapper = mapper;
     }
 
+
     public async Task<ErrorOr<IReadOnlyList<AuditoriaResponse>>> Handle(ObtenerAuditoriasQuery query, CancellationToken cancellationToken)
     {
         IReadOnlyList<Auditoria> auditorias = await _auditoriaRepository.ObtenerAuditorias();
